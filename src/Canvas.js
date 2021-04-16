@@ -26,6 +26,7 @@ export default function Canvas(props) {
       else {
         anchorPoints[index] = {x: newX, y: newY};
       }
+    //console.log(anchorPoints);
     setAnchorPoints([...anchorPoints]);
   };
   const drawAnchorPoints = () => {
@@ -67,7 +68,12 @@ export default function Canvas(props) {
           width={width}
           height={height}
           onContentClick={e => {
-            createAnchorPoint(e.evt.layerX, e.evt.layerY);
+            const pos = e.currentTarget.getPointerPosition();
+            createAnchorPoint(pos.x, pos.y);
+          }}
+          onContentTap={e => {
+            const pos = e.currentTarget.getPointerPosition();
+            createAnchorPoint(pos.x, pos.y);
           }}>
           <Layer>
             <CartesianCoordinates width={width} height={height} scale={12} />

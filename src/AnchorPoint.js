@@ -8,16 +8,17 @@ export default function AnchorPoint(props) {
     <Circle
       x={x}
       y={y}
-      radius={6}
-      fill={isDragging ? 'red' : 'green'}
+      radius={10}
+      fill={isDragging ? '#744da9' : '#8e8cd8'}
       draggable
       onDragStart={() => {
         setIsDragging(true);
       }}
       onDragEnd={e => {
-        console.log(e.evt.layerX, e.evt.layerY);
+        const pos = e.target;
+        //console.log(pos.x(), pos.y());
         setIsDragging(false);
-        updatePosition(e.evt.layerX, e.evt.layerY);
+        updatePosition(pos.x(), pos.y());
       }}
     />
   );
