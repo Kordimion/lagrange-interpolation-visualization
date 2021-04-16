@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#### Warning! this project works weird when you use production build of it. It is probably react-konva bug, but I'm not sure. Use development build instead
+
 ## Available Scripts
 
 In the project directory, you can run:
